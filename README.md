@@ -4,7 +4,7 @@
 
 #### Demo
 
-<a href="">
+<a href="https://rumi-w-2018.github.io/smart-brain/">
 Open Application</a>
 
 Usage:

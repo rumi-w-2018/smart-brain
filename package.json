@@ -14,7 +14,10 @@
     "tachyons": "^4.10.0",
     "whatwg-fetch": "^2.0.4"
   },
+  "homepage": "https://rumi-w-2018.github.io/smart-brain/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -23,6 +26,7 @@
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
+    "gh-pages": "^1.2.0",
     "prettier": "^1.13.7"
   }
 }

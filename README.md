@@ -11,8 +11,6 @@ The application allows users to register/signin and detect faces on pictures. Us
 <a href="https://rumi-w-2018.github.io/smart-brain/">
 Open Application</a>
 
-Usage:
-
 ### Install
 
     npm install

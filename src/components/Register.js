@@ -24,7 +24,6 @@ class Register extends Component {
   };
 
   handlePasswordChange = e => {
-    console.log('pss', e.target.value);
     this.setState({
       password: e.target.value // Important - otherwise form will try to submit.
     });

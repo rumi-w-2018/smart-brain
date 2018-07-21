@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Spinner from './Spinner';
+import './Spinner.css';
 
 class Register extends Component {
   constructor(props) {
@@ -86,6 +88,11 @@ class Register extends Component {
                 value="Register"
               />
             </div>
+            {this.props.status === 'pending' ? (
+              <div className="center signin-pending ">
+                <Spinner />
+              </div>
+            ) : null}
           </form>
         </main>
       </article>

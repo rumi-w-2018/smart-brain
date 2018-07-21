@@ -29,14 +29,18 @@ class App extends Component {
 
     this.state = {
       route: 'signin',
-      error: false
+      status: ''
     };
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.user.isError) {
       this.setState({
-        error: true
+        status: 'error'
+      });
+    } else if (nextProps.user.isPending) {
+      this.setState({
+        status: 'pending'
       });
     } else if (nextProps.user.signedIn) {
       this.setState({
@@ -48,14 +52,15 @@ class App extends Component {
   onSignOutClick = () => {
     this.props.signOutUser();
     this.setState({
-      route: 'signin'
+      route: 'signin',
+      status: ''
     });
   };
 
   handleSignIn = (email, password) => {
     this.setState(
       {
-        error: false
+        status: ''
       },
       () => {
         this.props.signIn(email, password);
@@ -70,7 +75,7 @@ class App extends Component {
   onRegisterBtnClick = () => {
     this.setState({
       route: 'register',
-      error: false
+      status: ''
     });
   };
 
@@ -86,12 +91,12 @@ class App extends Component {
             <ImageLinkForm />
           </Fragment>
         ) : this.state.route === 'register' ? (
-          <Register handleRegister={this.handleRegister} />
+          <Register handleRegister={this.handleRegister} status={this.state.status} />
         ) : this.state.route === 'signin' ? (
           <SignIn
             handleSignIn={this.handleSignIn}
             onRegisterBtnClick={this.onRegisterBtnClick}
-            isError={this.state.error}
+            status={this.state.status}
           />
         ) : null}
       </div>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Spinner from './Spinner';
+import './SignIn.css';
 
 class SignIn extends Component {
   constructor(props) {
@@ -72,11 +74,16 @@ class SignIn extends Component {
                 Register
               </a>
             </div>
-            {this.props.isError ? (
+            {this.props.status === 'error' ? (
               <div className="ma1 center bg-light-yellow ">
                 <p href="#0" className="f5 dim black db">
                   Error - Unable to sign in.
                 </p>
+              </div>
+            ) : null}
+            {this.props.status === 'pending' ? (
+              <div className="center signin-pending ">
+                <Spinner />
               </div>
             ) : null}
           </form>

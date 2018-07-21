@@ -2,7 +2,11 @@
 
 ### Application built on React/Redux
 
-#### Demo
+### Usage
+
+The application allows users to register/signin and detect faces on pictures. Uses <a href="https://github.com/rumi-w-2018/smart-brain-api">smart-brain-api</a>.
+
+### Demo
 
 <a href="https://rumi-w-2018.github.io/smart-brain/">
 Open Application</a>
